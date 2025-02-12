@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let prices = document.querySelectorAll(".price");
     let marketCaps = document.querySelectorAll(".mc");
+    let mcCoinPage = document.querySelectorAll(".mcp");
     let changes = document.querySelectorAll(".change");
 
     function formatPrice(numStr){
@@ -16,6 +17,24 @@ document.addEventListener("DOMContentLoaded", function() {
         return '$' + formattedNumber;
     }
 
+    function formatMarketCapForCoinPage(numStr) {
+        let number = parseFloat(numStr);
+        if (number >= 1e12) {
+            return '$' + (number / 1e12).toFixed(1) + 'T';
+        } else if (number >= 1e9) {
+            return '$' + (number / 1e9).toFixed(1) + 'B';
+        } else if (number >= 1e6) {
+            return '$' + (number / 1e6).toFixed(1) + 'M';
+        } else if (number >= 1e3) {
+            return '$' + (number / 1e3).toFixed(1) + 'k';
+        } else {
+            return '$' + number.toFixed(1);
+        }
+
+
+        // let formattedNumber = Math.floor(number).toLocaleString('en-US');
+        // return '$' + formattedNumber;
+    }
 
     function formatChange(numStr) {
         // Convert string to number, considering the sign
@@ -51,6 +70,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     marketCaps.forEach(function(marketCapCell) {
         marketCapCell.textContent = formatMarketCap(marketCapCell.textContent);
+    });
+
+    mcCoinPage.forEach(function(mcpCell){
+        mcpCell.textContent = formatMarketCapForCoinPage(mcpCell.textContent);
     });
 
     changes.forEach(function(changeCell) {

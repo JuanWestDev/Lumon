@@ -444,6 +444,8 @@ app.get("/coin/:uuid", async (req, res) => {
 
       // console.log(resultCoinHistory.price);
       // console.log(resultCoinHistory.timestamp);
+
+      console.log(result);
       res.render("coin.ejs", {
         coinDetails: result,
         prices: resultCoinHistory.map(item => item.price),

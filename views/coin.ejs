@@ -79,6 +79,108 @@
                <% } %>
         </section>
 
+        <section class="information">
+
+            <div class="information-box"> <!--Description-->
+                <div class="information-header">
+                    What is <%= coinDetails.coin.name %>?
+                </div>
+
+                <div class="description">
+                    <%= coinDetails.coin.description %>
+                </div>
+            </div>
+
+           
+            <div class="information-box"> <!--Stats-->
+                <div class="information-header">
+                    Information:
+                </div>
+
+                <div class="coin-statistics-box">
+
+                    <div class="statistics con">
+                        <div class="stats">
+
+                            <div class="stat-card">
+                                <div class="stat">Rank</div>
+                                <div class="stat rank"> <%= coinDetails.coin.rank %></div>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat">Market Cap</div>
+                                <div class="stat mcp"><%= coinDetails.coin.marketCap %></div>
+                            </div>
+                            
+                            <div class="stat-card">
+                                <div class="stat">All Time High</div>
+                                <div class="stat price"><%= coinDetails.coin.allTimeHigh.price %></div> <!--named the class price since it's already defind in my numberformats.js even though this is getting the ath-->
+                            </div>
+                        
+                        </div>
+                    </div>
+
+                    <div class="supply con">
+                        <div class="stats">
+                            
+                            <div class="stat-card">
+                                <div class="stat">Circulating Supply</div>
+                                <div class="stat circ-supply mcp"> <%= coinDetails.coin.supply.circulating %></div>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat">Total Supply</div>
+                                <div class="stat total-supply mcp"><%= coinDetails.coin.supply.total %></div>
+                            </div>
+                            
+                            <div class="stat-card">
+                                <div class="stat">Max Supply</div>
+
+                                <% if(coinDetails.coin.supply.max == null) {%>
+                                    
+                                    <div class="stat max-supply">
+                                        -- <%= coinDetails.coin.symbol %>
+                                    </div>
+                                <% } else { %>
+                                    <div class="stat max-supply mcp">
+                                        <%=coinDetails.coin.supply.max%>
+                                    </div>
+                                <% }%>
+
+                               
+                            </div>
+                        
+                        </div>
+                    </div>
+
+
+                    <div class="profile con">
+                        <div class="stats">
+                            
+                            <div class="stat-card">
+                                <div class="stat">Website</div>
+                                <div class="stat web-link"> <a href="<%= coinDetails.coin.websiteUrl %>"><%= coinDetails.coin.websiteUrl %></a></div>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat">Markets</div>
+                                <div class="stat num-of-cex"><%= coinDetails.coin.numberOfMarkets %></div>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat">Exchange Listings</div>
+                                <div class="stat num-of-cex"><%= coinDetails.coin.numberOfExchanges %></div>
+                            </div>
+                        
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            
+        </section>
+
     </div>
   
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

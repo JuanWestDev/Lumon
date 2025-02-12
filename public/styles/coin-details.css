@@ -16,6 +16,7 @@
     justify-content: space-between;
     /* width: 1000px; */
     margin-bottom: 20px;
+    font-weight: bolder;
 }
 
 .hero-subbox{
@@ -47,17 +48,17 @@
 }
 
 .coin-name{
-    font-size: 23px;
+    font-size: 40px;
     color: whitesmoke;
 }
 
 .coin-p{
-    font-size: 20px;
+    font-size: 40px;
     color: whitesmoke;
 }
 
 .coin-c{
-    font-size: 15px;
+    font-size: 25px;
 }
 
 
@@ -172,4 +173,84 @@
     0 0 5px #18A5A7, /* Further outer glow */
     0 0 10px #BFFFC7 , /* Transition to lighter color */
     0 0 10px #BFFFC7; /* Even lighter for the outermost glow */
+}
+
+
+.information{
+    display: flex;
+        /* align-items: center; */
+        justify-content: center;
+    flex-direction: column;
+    /* background-color: rgb(255, 0, 0); */
+    /* margin-top: 140px; */
+    width: 1165px;
+    max-width: 1165px;
+    min-height: 600px;
+}
+
+.coin-statistics-box{
+    display: flex;
+    justify-content: space-between;
+}
+
+.information-box{
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+    /* margin-bottom: 25px; */
+    padding: 10px;
+    color: whitesmoke;
+}
+
+.information-header{
+    font-weight: bolder;
+    margin-bottom: 15px;
+    font-size: 30px;
+}
+
+.description{
+    font-size: 20px;
+}
+
+.statistics{
+    display:flex;
+}
+
+.stats{
+    display: flex;
+    flex-direction: column;
+    border-width: 2px;
+    border-style: solid;
+    border-image: linear-gradient(to right, #18A5A7, #BFFFC7) 1;
+}
+
+.stat-card{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    gap: 50px;
+}
+
+.stat{
+    padding:5px;
+}
+
+.supply{
+    display: flex;
+}
+
+a {
+    text-decoration: none; /* Removes the underline from the link */
+    background-image: linear-gradient(to right, #18A5A7, #BFFFC7);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+a:visited {
+    color: inherit; /* Ensures the link color doesn't change after being visited */
+}
+
+.con{
+    max-width: 313px;
 }
