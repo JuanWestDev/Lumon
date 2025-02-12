@@ -121,6 +121,7 @@
     display: flex;
     font-size: 20px;
     margin-left: 40px;
+    padding: 10px;
     gap: 47px;
     color: whitesmoke;
 }
@@ -133,4 +134,42 @@
 .chart-controls{
     font-size: 20px;
     color: whitesmoke;
+}
+
+.chart-buttons{
+    display: flex;
+    padding: 10px;
+}
+
+.chart-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-size: 25px;
+    color: whitesmoke;
+    min-width: 50px;
+    border: none;
+    background-color: transparent;
+
+    border-width: 2px;
+    border-style: solid;
+    border-image: linear-gradient(to right, #18A5A7, #BFFFC7) 1;
+}
+
+.chart-button:hover{
+
+    cursor: pointer;
+
+    transition: all 0.5s ease;
+    opacity: 1;
+    overflow: hidden;
+
+    box-shadow: 
+    0 0 5px #18A5A7, /* Inner glow */
+    0 0 5px #18A5A7, /* Middle glow */
+    0 0 5px #18A5A7, /* Outer glow */
+    0 0 5px #18A5A7, /* Further outer glow */
+    0 0 10px #BFFFC7 , /* Transition to lighter color */
+    0 0 10px #BFFFC7; /* Even lighter for the outermost glow */
 }
