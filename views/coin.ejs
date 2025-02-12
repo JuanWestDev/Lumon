@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="stylesheet" href="/styles/head-and-foot.css">
+    <link rel="stylesheet" href="/styles/coin-details.css">
+    <link rel="stylesheet" href="/styles/home.css">
+    <title>Details</title>
+</head>
+
+<%- include("partials/header.ejs") %>
+
+<body>
+    
+    <div id="container">
+        
+        <section id="price">
+            <% if(locals.coinDetails && locals.prices) { %>
+            
+               <div class="hero">
+                    <div class="hero-subbox left">
+                        <div class="coin-image"><image class ="coin-image-settings" src="<%= coinDetails.coin.iconUrl %>"></image></div>
+                        <div class="coin-name"><%= coinDetails.coin.name %> </div>
+                    </div>
+                    
+                    <div class="hero-subbox right">
+                        <div class="coin-p price"><%= coinDetails.coin.price %></div>
+                        <div class="coin-c change"><%= coinDetails.coin.change %></div>
+                    </div>
+               </div>
+
+               <div id="baseline-chart">
+                    <baseline-chart class="baseline-chart-container">
+                        <div class="chart-header">
+                            <div class="chart-title">Price Chart</div>
+                        </div>
+
+                        <div class="chart-body">
+                            <div id="dot" class="dot" style="display: none; position: absolute;"></div>
+                            <canvas id="coinChart">
+                                
+                            </canvas>
+                            
+                        </div>
+
+                        <div class="chart-footer">
+                            <div class="chart-label">2 PM</div>
+                            <div class="chart-label">4 PM</div>
+                            <div class="chart-label">6 PM</div>
+                            <div class="chart-label">8 PM</div>
+                            <div class="chart-label">10 PM</div>
+                            <div class="chart-label">12 AM</div>
+                            <div class="chart-label">2 AM</div>
+                            <div class="chart-label">4 AM</div>
+                            <div class="chart-label">6 AM</div>
+                            <div class="chart-label">8 AM</div>
+                        </div>
+                        <div class="chart-controls">The Chart Controls</div>
+                    </baseline-chart>
+               </div>
+               <% } %>
+        </section>
+
+    </div>
+  
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        
+const ctx = document.getElementById('coinChart').getContext('2d');
+
+const data = {
+    labels: <%- JSON.stringify(timestamps) %>,
+    datasets: [{
+        label: <%- JSON.stringify(prices) %>,
+        data: <%- JSON.stringify(prices) %>,
+        borderColor: 'rgba(75, 192, 192, 1)',
+        borderWidth: 3,
+        // hoverRadius: 4,
+        pointRadius: 0.01,
+        pointHoverRadius: 7,
+        pointHoverBackgroundColor: 'rgb(255,0,0)',
+        fill: false
+    }]
+};
+
+const config = {
+    type: 'line',
+    data: data,
+    options: {
+
+        animation: {
+            duration: 0
+        },
+        hover:{
+            animationDuration: 0
+        },
+
+        scales: {
+            x: {
+                reverse: true,
+                type: 'category',
+                position: 'bottom',
+                ticks: {
+                    display: false
+                },    
+                grid: {
+                    display: false
+                },    
+                border: {
+                    display: false
+                }
+
+            },
+            y: {
+                beginAtZero: false,
+                ticks: {
+                    display: false
+                },
+                grid: {
+                    display: false
+                },
+                border: {
+                    display: false
+                }
+            }
+        },
+        plugins: {
+            tooltip: {
+                enabled: true,
+                displayColors: false,
+                callbacks: {
+                    title: function(context){
+    
+                        return context[0].label;
+                       
+                       
+                    },
+                    label: function(context){
+                        let value = context.raw;
+                        // let roundedValue = Math.round(value * 100) / 100;
+
+                        let numericValue = parseFloat(value);
+                        // Check if conversion was successful
+                        if (isNaN(numericValue)) {
+                            console.error('Failed to parse value:', value);
+                            return 'Invalid Price';
+                        }
+                        // Format the number with commas and 2 decimal places
+                            let formattedValue = numericValue.toLocaleString(undefined, {
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 2
+                        });
+                        return '$' + formattedValue;
+                    }
+                },
+                
+
+            },
+            
+            legend: {
+                display: false
+            }
+          
+        },
+        interaction: {
+            mode: 'nearest',
+            axis: 'x',
+            intersect: false
+        }
+    }
+};
+
+const myChart = new Chart(ctx, config);
+
+    </script>
+    <script src="/scripts/numberFormats.js"></script>
+</body>
+
+<%- include("partials/footer.ejs") %>
+
+</html>

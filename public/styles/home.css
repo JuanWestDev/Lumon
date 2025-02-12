@@ -1,0 +1,511 @@
+body {
+    background-color: rgb(22, 22, 22);
+    /* background-image: linear-gradient(to right, #18A5A7, #BFFFC7); */
+    /* background-image: linear-gradient(to right, #38A2D7, #561139); */
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+.lumon-logo{
+    height: 75;
+    width: 100px;
+}
+
+h1{
+    color: whitesmoke;
+    font-size: 25px;
+    margin-left: 10px;
+    cursor: pointer;
+    background-image: linear-gradient(to right, #18A5A7, #BFFFC7);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+
+h1:hover{
+   
+}
+
+/* #menu-bar{
+    display: flex;
+    align-self: flex-start;
+}
+
+#menu-items{
+    display:flex;
+    position: fixed;
+    align-items: center;
+    background-color: rgb(20 20 20);
+    width: 100%;
+    gap:20px;
+    top: 0px;
+    left: 0px;
+}
+
+#items{
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    gap:10px
+}
+
+.item-button{
+    height: 50px;
+    font-size: 20px;
+    background-color: transparent;
+    color: whitesmoke;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+
+ 
+}
+
+.item-button:hover{
+    color: transparent;
+    background-image: linear-gradient(to right, #18A5A7, #BFFFC7);
+    -webkit-background-clip: text;
+    background-clip: text;
+} */
+
+#container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: brown; */
+    width: 100%;
+}
+
+
+#crypto-market-overview-box{
+    display: flex;
+    /* background-color: darkmagenta; */
+    /* flex-direction: column;
+    height: 500px; */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.title-sections{
+    display: flex;
+    color: whitesmoke;
+    align-self: flex-start;
+    font-size: 25px;
+    /* margin-left: 280px; */
+}
+
+
+
+.market-overview-header{
+
+}
+
+.market-overview-card{
+    margin-top: 140px;
+    min-width: 1165px;
+    max-width: 1165px;
+}
+
+.market-overview{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    /* align-items: center; */
+    /* background-color: rgb(160, 255, 151); */
+    gap:25px;
+    /* height: 500px; */
+    /* width: 100%; */
+}
+
+.market-images{
+    height: 20px;
+    width: 20px;
+    margin-left: 7px;
+}
+
+.market-overview-footer{
+    
+
+}
+
+.header-span{
+
+}
+
+.header-div{
+    display: flex;
+    align-items: center;
+}
+
+.header-div-text{
+    font-size: 20px;
+}
+
+.header-div-image{
+    
+}
+
+
+.crypto-coins-header{
+    margin-top: 100px;
+
+}
+
+
+.card{
+    display: flex;
+    /* border-width: 5px;
+    border-style: solid;
+    border-image: linear-gradient(to right, #18A5A7, #BFFFC7) 1; */
+    /* background-color: yellow; */
+    /* height: 250px; */
+    /* width: 250px; */
+}
+
+#crypto-box{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    /* align-items: center; */
+    /* background-color: rgb(151, 206, 255); */
+    /* height: 500px; */
+    width: 100%;
+
+}
+
+.crypto-coins{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: rgb(81, 81, 81); */
+    /* border-width: 5px;
+    border-style: solid;
+    border-image: linear-gradient(to right, #18A5A7, #BFFFC7) 1; */
+   /* width: 100%; */
+   min-width: 1165px;
+    max-width: 1165px;
+}
+
+/* li{
+    list-style: none;
+} */
+
+#myForm{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+.table-data{
+    padding: 10px;
+}
+
+.lumon-watch-headers{
+
+}
+
+.row-headers{
+
+}
+
+.tab{
+    color:whitesmoke;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+
+}
+
+.names{
+    /* display:flex;
+    align-items: center;
+    min-width: 730px;
+    gap: 10px; */
+}
+.ranks{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.tab-rank{
+
+}
+
+
+
+
+/* .crypto-list{
+    display: flex;
+
+    font-size: 20px;
+    background-color: rgb(255, 250, 154);
+    cursor: pointer;
+    :hover{
+        background-color: aqua;
+    }
+} */
+
+.all-crypto-table{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-width: 2px;
+    border-style: solid;
+    border-image: linear-gradient(to right, #18A5A7, #BFFFC7) 1;
+    width: fit-content;
+    /* background-color: rgb(255, 255, 255); */
+}
+
+.all-crypto-table tbody tr.row-data{
+    transition: all 0.5s ease;
+    /* height: 40px; Adjust based on your row height */
+    opacity: 1;
+    overflow: hidden;
+}
+
+.lumon-watch{
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+    border-width: 2px;
+    border-style: solid;
+    border-image: linear-gradient(to right, #18A5A7, #BFFFC7) 1;
+    min-width: 1165px;
+    max-width: 1165px;
+}
+
+.lumon-watch tbody tr.row-data{
+    transition: all 0.5s ease;
+    /* height: 40px; Adjust based on your row height */
+    opacity: 1;
+    overflow: hidden;
+}
+
+.lumon-watch tbody tr.row-data.hidden{
+    height: 0;
+    opacity: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.all-crypto-table-headers{
+    font-weight: 700;
+    font-size: 30px;
+    text-align: left;
+}
+
+
+/* .table-data.rank-tab{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+} */
+
+/* .row-headers{
+    display: flex;
+} */
+
+/* .table-data.tab{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+} */
+
+.tab-box{
+    /* display: inline-block; */
+
+    display: -webkit-inline-box;
+    flex-direction: column;
+    border-radius: 50%;
+}
+
+.tab-span{
+    display: flex;
+}
+
+.arrow{
+    height: 9px;
+    width: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.arrow.up{
+    background-image: url("/images/caret-up-fill.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+}
+
+.arrow.down{
+    background-image: url("/images/caret-down-fill.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+
+/* .selected{
+    background-image: url("/images/caret-up-fill-clicked.svg");
+    background-color: transparent;
+} */
+
+.arrow.up.selected{
+    background-image: url("/images/caret-up-fill-clicked.svg");
+    background-color: transparent;
+}
+
+.arrow.down.selected{
+    background-image: url("/images/caret-down-fill-clicked.svg");
+    background-color: transparent;
+}
+
+
+
+.all-crypto-table-body{
+    font-size: 15px;
+    color: whitesmoke;
+    /* background-color: rgb(255, 255, 255); */
+    
+}
+
+.row-data{
+    /* display: flex;
+    align-items: center; */
+    cursor: pointer;
+    /* :hover{
+        background-color: rgba(212, 212, 212, 0.329);
+    } */
+}
+
+tr.row-headers:hover{
+    outline: none;
+    box-shadow: none;
+}
+
+tr:hover{
+    /* border-width: 2px;
+    border-style: solid;
+    border-color: rgb(255, 0, 0); */
+
+    outline: rgb(134, 192, 178) solid 1px;
+    box-shadow: 
+    0 0 5px #18A5A7, /* Inner glow */
+    0 0 5px #18A5A7, /* Middle glow */
+    0 0 5px #18A5A7, /* Outer glow */
+    0 0 5px #18A5A7, /* Further outer glow */
+    0 0 10px #BFFFC7 , /* Transition to lighter color */
+    0 0 10px #BFFFC7; /* Even lighter for the outermost glow */
+
+    /* background-color: aliceblue; */
+}
+
+.table-data.name{
+    display:flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.table-data.crypto-name{
+    display:flex;
+    align-items: center;
+    min-width: 730px;
+    gap: 10px;
+}
+
+.coin-page{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    padding: 2px;
+    gap: 5px;
+}
+
+.table-data.rank{
+    /* display:flex; */
+    /* width: 10px; */
+}
+
+
+.crypto-symbol{
+    font-size: 10px;
+    color: rgb(128 128 128);
+    margin-top: 3px;
+}
+
+.image-block{
+    display: contents;
+    /* height: 20px;
+    width: 30px; */
+}
+
+.crypto-image{
+    border-radius: 50%;
+    /* height: 20px; */
+    width: 30px;
+}
+
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-end;
+    /* background-color: yellowgreen; */
+    width: 200px;
+    height: 75px;
+    gap: 10px;
+}
+
+.pagination a{
+    display: flex;
+    color: whitesmoke;
+    /* background-color: aliceblue; */
+    justify-content: center;
+    text-decoration: none;
+
+
+    border-width: 2px;
+    border-style: solid;
+    border-image: linear-gradient(to right, #18A5A7, #BFFFC7) 1;
+
+    padding: 10px;
+    width: 65px;
+
+    cursor: pointer;
+    
+}
+
+.pagination a:hover{
+    /* border-width: 2px;
+    border-style: solid;
+    border-color: rgb(255, 0, 0); */
+
+    transition: all 0.5s ease;
+    /* height: 40px; Adjust based on your row height */
+    opacity: 1;
+    overflow: hidden;
+
+    /* outline: rgb(134, 192, 178) solid 1px; */
+    box-shadow: 
+    0 0 5px #18A5A7, /* Inner glow */
+    0 0 5px #18A5A7, /* Middle glow */
+    0 0 5px #18A5A7, /* Outer glow */
+    0 0 5px #18A5A7, /* Further outer glow */
+    0 0 10px #BFFFC7 , /* Transition to lighter color */
+    0 0 10px #BFFFC7; /* Even lighter for the outermost glow */
+
+    /* background-color: aliceblue; */
+}
+
+.pagination-text{
+    font-size: 15px;
+}
