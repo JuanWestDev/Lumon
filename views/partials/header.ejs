@@ -6,5 +6,98 @@
             <button class="item-button">Markets</button>
             <button class="item-button">Trade</button>
         </div>
+        <div class="search-container">
+            <input type="text" id="coinSearch" placeholder="Search" onkeyup="suggestCoins(event)">
+            <div id="suggestions" style="display:none"></div>
+        </div>
     </div>
 </div>
+
+<script>
+    let debounceTimer;
+
+    function suggestCoins(event) {
+        const searchTerm = event.target.value;
+        const suggestionsContainer = document.getElementById('suggestions');
+        suggestionsContainer.innerHTML = ''; // Clear previous suggestions
+
+        // Debounce the API call
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+            if (searchTerm.length > 0) {
+                const apiKey = 'coinrankinge4c51e1d5e09ecacdacc603a9aef91662752243e2ee6949e';
+                const url = `https://api.coinranking.com/v2/search-suggestions?query=${searchTerm}`;
+
+                fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        'x-access-token': apiKey
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    displaySuggestions(data.data.coins);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    suggestionsContainer.innerHTML = '<div class="suggestion-item">An error occurred while fetching suggestions.</div>';
+                });
+            }
+        }, 300); // 300ms delay for debounce
+    }
+
+    function displaySuggestions(coins) {
+        const suggestionsContainer = document.getElementById('suggestions');
+
+        if (coins.length === 0) {
+            suggestionsContainer.innerHTML = '<div class="suggestion-item">No suggestions found.</div>';
+            return;
+        }
+        suggestionsContainer.style = "display:block";
+        coins.forEach(coin => {
+            const coinElement = document.createElement('div');
+            coinElement.className = 'suggestion-item';
+            coinElement.textContent = `${coin.name} (${coin.symbol})`;
+            coinElement.onclick = () => {
+                window.location.href = `http://localhost:3000/coin/${coin.uuid}`;
+                document.getElementById('coinSearch').value = coin.name;
+                suggestionsContainer.innerHTML = ''; // Clear suggestions on selection
+            };
+            suggestionsContainer.appendChild(coinElement);
+        });
+    }
+
+    // Function to set up hover scrolling
+    function setupHoverScroll(suggestionsContainer) {
+        suggestionsContainer.addEventListener('mouseenter', function() {
+            scrollInterval = setInterval(() => {
+                if (suggestionsContainer.scrollTop < suggestionsContainer.scrollHeight - suggestionsContainer.clientHeight) {
+                    suggestionsContainer.scrollTop += 1; // Scroll down by 1 pixel
+                } else {
+                    // If reached the bottom, stop scrolling
+                    clearInterval(scrollInterval);
+                }
+            }, 16); // Adjust the interval for smoother scrolling
+        });
+
+        suggestionsContainer.addEventListener('mouseleave', function() {
+            clearInterval(scrollInterval); // Stop scrolling when mouse leaves
+        });
+    }
+
+
+    function clearSuggestionsOnOutsideClick(event) {
+        const searchContainer = document.querySelector('.search-container');
+        const suggestionsContainer = document.getElementById('suggestions');
+        const searchInput = document.getElementById('coinSearch');
+        
+        // Check if the click was inside the search container or on suggestions
+        if (!searchContainer.contains(event.target) && !suggestionsContainer.contains(event.target)) {
+            suggestionsContainer.innerHTML = ''; 
+            searchInput.value = '';
+            suggestionsContainer.style = "display:none";
+        }
+    }
+
+    document.addEventListener('click', clearSuggestionsOnOutsideClick);
+</script>
