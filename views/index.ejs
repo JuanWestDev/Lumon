@@ -56,7 +56,7 @@
                                 </tr>
 
                                     <% trending.forEach(function(coin) { %>
-                                        <tr class="row-data">
+                                        <tr class="row-data hidden" onClick="window.location.href='http://localhost:3000/coin/<%=coin.uuid%>'">
                                             <td class="table-data name"> <span class="image-block"><img class="crypto-image" src="<%=coin.iconUrl %>"></span> <span class="crypto-name"><%= coin.name %></span> <span class="crypto-symbol"><%= coin.symbol %></span></td>
                                             <td class="table-data price"><%= coin.price %></td>
                                             <td class="table-data change"><%= coin.change %></td>
@@ -88,7 +88,7 @@
                                     </tr>
     
                                         <% topGainer.forEach(function(coin) { %>
-                                            <tr class="row-data">
+                                            <tr class="row-data hidden" onClick="window.location.href='http://localhost:3000/coin/<%=coin.uuid%>'">
                                                 <td class="table-data name"> <span class="image-block"><img class="crypto-image" src="<%=coin.iconUrl %>"></span> <span class="crypto-name"><%= coin.name %></span> <span class="crypto-symbol"><%= coin.symbol %></span></td>
                                                 <td class="table-data price"><%= coin.price %></td>
                                                 <td class="table-data change"><%= coin.change %></td>
@@ -100,7 +100,7 @@
                             </table>
                         </table>
                     </div>
-
+                    
                     <div class="top-losers card">
                         <table>
                             <table class="all-crypto-table">
@@ -121,7 +121,7 @@
                                     </tr>
     
                                         <% topLoser.forEach(function(coin) { %>
-                                            <tr class="row-data hidden">
+                                            <tr class="row-data hidden" onClick="window.location.href='http://localhost:3000/coin/<%=coin.uuid%>'">
                                                 <td class="table-data name"> <span class="image-block"><img class="crypto-image" src="<%=coin.iconUrl %>"></span> <span class="crypto-name"><%= coin.name %></span> <span class="crypto-symbol"><%= coin.symbol %></span></td>
                                                 <td class="table-data price"><%= coin.price %></td>
                                                 <td class="table-data change"><%= coin.change %></td>
@@ -188,8 +188,6 @@
                         <tbody class="all-crypto-table-body">
                         
                                 <% crypto.forEach(function(coin) { %>
-                                  
-
                                     <tr class="row-data hidden" onClick="window.location.href='http://localhost:3000/coin/<%=coin.uuid%>'">
                                         <td class="table-data rank" ><%=coin.rank %></td>
                                         <td class="table-data crypto-name"><span class="image-block"><img class="crypto-image" src="<%=coin.iconUrl %>"></span> <span class="crypto-name"><%= coin.name %></span> <span class="crypto-symbol"><%= coin.symbol %></span></td>

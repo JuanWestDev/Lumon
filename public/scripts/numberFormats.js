@@ -7,12 +7,29 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function formatPrice(numStr){
         let number = parseFloat(numStr);
-        let formattedNumber = number.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+
+        if (isNaN(number)) return numStr;
+
+        let precision;
+        if (number < 0.01) {
+            // For numbers less than 0.01, use up to 7 decimal places
+            let decimalPart = number.toString().split('.')[1] || '';
+            let significantDigits = decimalPart.length;
+            precision = Math.min(significantDigits, 7);
+        } else {
+            // For numbers 0.01 and above, use 2 decimal places
+            precision = 2;
+        }
+        
+        let formattedNumber = number.toFixed(precision).replace(/\d(?=(\d{3})+\.)/g, '$&,');
         return '$' + formattedNumber;
+        // let formattedNumber = number.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+        // return '$' + formattedNumber;
     }
 
     function formatMarketCap(numStr) {
         let number = parseFloat(numStr);
+    
         let formattedNumber = Math.floor(number).toLocaleString('en-US');
         return '$' + formattedNumber;
     }
