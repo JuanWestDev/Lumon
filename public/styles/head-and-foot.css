@@ -7,12 +7,21 @@
     display:flex;
     position: fixed;
     align-items: center;
+    justify-content: space-between;
     background-color: rgb(20 20 20);
     width: 100%;
     gap:20px;
     top: 0px;
     left: 0px;
 }
+
+.menu-items-left{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
 
 #items{
     display: flex;
@@ -39,7 +48,7 @@
     } */
 }
 
-.item-button:hover{
+.fill-effect:hover{
     color: transparent;
     background-image: linear-gradient(to right, #18A5A7, #BFFFC7);
     -webkit-background-clip: text;
@@ -191,5 +200,61 @@ color: whitesmoke;
 }
 
 .suggestion-item:hover {
-    background-color: #e9e9e9;
+    transition: all 0.5s ease;
+    opacity: 1;
+    overflow: hidden;
+
+    box-shadow: 
+    0 0 5px #18A5A7, /* Inner glow */
+    0 0 5px #18A5A7, /* Middle glow */
+    0 0 5px #18A5A7, /* Outer glow */
+    0 0 5px #18A5A7, /* Further outer glow */
+    0 0 10px #BFFFC7 , /* Transition to lighter color */
+    0 0 10px #BFFFC7; /* Even lighter for the outermost glow */
+}
+
+.menu-items-right{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.login-sign-up-buttons{
+    display: flex;
+    align-items: center;
+    color: whitesmoke;
+    height: 50px;
+    font-size: 22px;
+    font-weight: bolder;
+    gap: 20px;
+    margin-right: 10px;
+}
+
+
+.login{
+    cursor: pointer;
+}
+
+.sign-up{
+    cursor: pointer;
+    background-image: linear-gradient(to right, #18A5A7, #BFFFC7);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.glow-text:hover {
+    background-image: linear-gradient(to right, #18A5A7, #BFFFC7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    
+    text-shadow:
+        0 0 2px #18A5A750, /* Inner glow */
+        0 0 2px #18A5A740, /* Middle glow */
+        0 0 2px #18A5A730, /* Outer glow */
+        0 0 2px #18A5A720, /* Further outer glow */
+        0 0 2px #BFFFC710 , /* Transition to lighter color */
+        0 0 2px #BFFFC705; /* Even lighter for the outermost glow */             
 }

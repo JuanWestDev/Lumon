@@ -1,14 +1,27 @@
 <div id="menu-bar">
     <div id="menu-items">
-        <h1 onClick="window.location.href='http://localhost:3000/'; return false">Lumon</h1>
-        <div id="items">
-            <button class="item-button">Buy Crypto</button>
-            <button class="item-button">Markets</button>
-            <button class="item-button">Trade</button>
+        <div class="menu-items-left">
+
+            <h1 class ="glow-text" onClick="window.location.href='http://localhost:3000/'; return false">Lumon</h1>
+
+            <div id="items">
+                <button class="item-button fill-effect">Buy Crypto</button>
+                <button class="item-button fill-effect">Markets</button>
+                <button class="item-button fill-effect">Trade</button>
+            </div>
+
+            <div class="search-container">
+                <input type="text" id="coinSearch" placeholder="Search" onkeyup="suggestCoins(event)">
+                <div id="suggestions" style="display:none"></div>
+            </div>
+
         </div>
-        <div class="search-container">
-            <input type="text" id="coinSearch" placeholder="Search" onkeyup="suggestCoins(event)">
-            <div id="suggestions" style="display:none"></div>
+
+        <div class="menu-items-right">
+            <div class="login-sign-up-buttons">
+                <div class="login fill-effect">Login</div>
+                <div class="sign-up glow-text">Sign Up</div>
+            </div>
         </div>
     </div>
 </div>
