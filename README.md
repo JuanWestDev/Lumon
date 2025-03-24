@@ -1,6 +1,12 @@
 # Lumon Home Page:
-![lumon-home-page](https://github.com/user-attachments/assets/10bd27ae-e159-4bcb-8e27-8ffc616fd5f2)
+![Lumon Home](https://github.com/user-attachments/assets/60973a1c-de96-4a47-a82d-8f2b43b3db3a)
 
 
-# Coin Page:
-![lumon-coin-page](https://github.com/user-attachments/assets/caf43dda-773b-439f-8e8b-650a2751789c)
+
+# Use Filters:
+![Lumon Filters](https://github.com/user-attachments/assets/f8880451-9456-4aa8-a31d-d3e70bc1103b)
+
+
+
+# Search for coins:
+![Lumon Search](https://github.com/user-attachments/assets/bee31dad-1d1e-4f79-9f10-47cbeeb380c3)
