@@ -70,13 +70,3 @@ function changeRankDownArrowColor(element){
         document.querySelector(".change-up").classList.remove("selected");
     }
 }
-
-// function changePriceUpArrowColor(){
-//     document.querySelector(".arrow.up.price").classList.toggle("selected");
-//     document.querySelector(".arrow.down.price").classList.remove("selected");
-// }
-
-// function changePriceDownArrowColor(){
-//     document.querySelector(".arrow.down.price").classList.toggle("selected");
-//     document.querySelector(".arrow.up.price").classList.remove("selected");
-// }

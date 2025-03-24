@@ -7,8 +7,8 @@ let currentIndex = 0;
 const totalSlides = slides.length;
 
 function updateCarousel(){
-    console.log(`Current Index: ${currentIndex}`); // Debug: Check the current index
-    console.log(`TranslateX: -${currentIndex * 100}%`); // Debug: Check the transform value
+    console.log(`Current Index: ${currentIndex}`); 
+    console.log(`TranslateX: -${currentIndex * 100}%`); 
     carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
 }
 

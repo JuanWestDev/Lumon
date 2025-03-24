@@ -16,33 +16,15 @@
     
     <div id="container">
         
-        <!-- <div id="menu-bar">
-            <div id="menu-items">
-                <h1>Lumon</h1>
-                <div id="items">
-                    <button class="item-button">Buy Crypto</button>
-                    <button class="item-button">Markets</button>
-                    <button class="item-button">Trade</button>
-                </div>
-            </div>
-        </div> -->
-        
         <% if(locals.trending && locals.crypto && locals.topGainer && locals.topLoser) { %>
             <div id="crypto-market-overview-box">
-              
-
                 <div class = "market-overview-card carousel-container">
+
                     <div class="market-overview-header title-sections">
                         <h2>Markets Overview</h2>
                     </div>
 
                     <div class="market-overview carousel">
-                        
-                        <!-- <div class="carousel-slide">
-
-                     
-                            
-                        </div> -->
 
                         <div class="trending card">
                             <table class="all-crypto-table trend mark-t">
@@ -59,7 +41,6 @@
                                                 </div>
                                             </span>
                                         </td>
-                                            <!-- Trending<span><img class="market-images" src="/images/flame-icon.png"></span></td> -->
                                     </tr>
 
                                         <% trending.forEach(function(coin) { %>
@@ -75,9 +56,6 @@
                             </table>
                         </div>
                     
-                        <!-- <div class = "carousel-slide">
-                          
-                        </div> -->
 
                         <div class="top-gainers card">
                             <table>
@@ -94,8 +72,7 @@
                                                             </div>
                                                     </div>
                                                 </span>
-                                            </td>
-                                                <!-- Trending<span><img class="market-images" src="/images/flame-icon.png"></span></td> -->
+                                            </td> 
                                         </tr>
         
                                             <% topGainer.forEach(function(coin) { %>
@@ -112,10 +89,6 @@
                             </table>
                         </div>
 
-                        <!-- <div class="carousel-slide">
-                            
-                        </div> -->
-
                         <div class="top-losers card">
                             <table>
                                 <table class="all-crypto-table losers mark-t ">
@@ -131,8 +104,7 @@
                                                             </div>
                                                     </div>
                                                 </span>
-                                            </td>
-                                                <!-- Trending<span><img class="market-images" src="/images/flame-icon.png"></span></td> -->
+                                            </td>      
                                         </tr>
         
                                             <% topLoser.forEach(function(coin) { %>

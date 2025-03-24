@@ -1,6 +1,3 @@
-// import { Chart, registerables } from 'chart.js';
-// Chart.register(...registerables);
-
 const ctx = document.getElementById('coinChart');
 new Chart(ctx, {
     type: 'line',

@@ -107,7 +107,7 @@
         });
 
         suggestionsContainer.addEventListener('mouseleave', function() {
-            clearInterval(scrollInterval); // Stop scrolling when mouse leaves
+            clearInterval(scrollInterval); 
         });
     }
 
@@ -117,28 +117,13 @@
         const suggestionsContainer = document.getElementById('suggestions');
         const searchInput = document.getElementById('coinSearch');
         
-        // Check if the click was inside the search container or on suggestions
+        
         if (!searchContainer.contains(event.target) && !suggestionsContainer.contains(event.target)) {
             suggestionsContainer.innerHTML = ''; 
             searchInput.value = '';
             suggestionsContainer.style = "display:none";
         }
     }
-
-    // const menuContainer = document.createElement("div");
-    // menuContainer.className = "menu-container";
-
-    // const exitMenuImage = document.createElement("img")
-    // exitMenuImage.className = "exit-menu-image";
-    // exitMenuImage.src = "../images/x-circle.svg";
-
-    // const exitMenuButton = document.createElement("div");
-    // exitMenuButton.className = "exit-menu-button";
-    // exitMenuButton.appendChild(exitMenuImage);
-
-    // const topMenuBox = document.createElement("div");
-    // topMenuBox.className = "top-menu-box";
-    // topMenuBox.appendChild(exitMenuButton);
 
     const menuContainer = document.createElement("div");
     menuContainer.className = "menu-container";
