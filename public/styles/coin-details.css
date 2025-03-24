@@ -7,7 +7,7 @@
     margin-top: 140px;
     width: 1165px;
     max-width: 1165px;
-    min-height: 600px;
+    /* min-height: 600px; */
 }
 
 .hero{
@@ -147,9 +147,9 @@
     align-items: center;
     justify-content: center;
     padding: 10px;
-    font-size: 25px;
+    font-size: 20px;
     color: whitesmoke;
-    min-width: 50px;
+    /* min-width: 50px; */
     border: none;
     background-color: transparent;
 
@@ -219,6 +219,8 @@
 .stats{
     display: flex;
     flex-direction: column;
+    min-width: 225px;
+    /* max-width: 225px; */
     border-width: 2px;
     border-style: solid;
     border-image: linear-gradient(to right, #18A5A7, #BFFFC7) 1;
@@ -253,4 +255,279 @@ a:visited {
 
 .con{
     
+}
+
+
+@media(max-width: 1265px){
+    #price{
+        min-width: 700px;
+        max-width: 700px;
+    }
+
+    .information{
+        min-width: 700px;
+        max-width: 700px;
+    }
+
+
+    .chart-footer{
+        margin-left: 5px;
+        font-size: 17px;
+        padding: 10px;
+        gap: 16px;
+    }
+
+    .chart-button{
+        font-size: 17px;
+        padding: 5px;
+    }
+
+    .coin-name{
+        font-size: 30px;
+    }
+
+    .coin-image-settings{
+        width: 55px;
+    }
+
+    .coin-p.price{
+        font-size: 30px;
+    }
+    .coin-c.change{
+        font-size: 20px;
+    }
+
+    .stats{
+        max-width: 225px;
+    }
+
+    .stat-card{
+        font-size: 12px
+    }
+
+    .description{
+        font-size: 19px;
+    }
+
+    .coin-statistics-box{
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* @media(min-width: 751px){
+    .chart-body{
+        min-height: 350px;
+        min-width: 700px;
+    }
+} */
+
+@media (max-width: 750px) {
+
+    #price{    
+        min-width: 650px;
+        max-width: 650px;
+    }
+
+    .information{
+        min-width: 650px;
+        max-width: 650px;
+    }
+
+    .chart-footer{
+        font-size: 14px;
+        gap: 18px;
+    }
+
+}
+
+/* @media(min-width: 676px){
+    .chart-body{
+        min-height: 325px;
+        min-width: 650px;
+    }
+} */
+
+@media (max-width: 675px){
+    #price{    
+        min-width: 500px;
+        max-width: 500px;
+    }
+
+    .information{
+        min-width: 500px;
+        max-width: 500px;
+    }
+
+    .coin-name{
+        font-size: 25px;
+    }
+
+    .coin-image-settings{
+        width: 40px;
+    }
+
+    .coin-p.price{
+        font-size: 25px;
+    }
+    .coin-c.change{
+        font-size: 15px;
+    }
+
+    .chart-title{
+        font-size: 15px;
+    }
+
+    .chart-footer{
+        font-size: 13px;
+        gap: 7px;
+    }
+
+    .chart-button{
+        font-size: 13px;
+    }
+
+    .information-header{
+        font-size: 25px;
+    }
+
+    .description{
+        font-size: 19px;
+    }
+
+    .stats{
+
+    }
+
+    .coin-statistics-box{
+        flex-direction: column;
+        gap: 10px;
+    }
+  
+}
+
+
+@media(max-width: 550px){
+    #price{    
+        min-width: 400px;
+        max-width: 400px;
+    }
+
+    .information{
+        min-width: 400px;
+        max-width: 400px;
+    }
+
+    .coin-name{
+        font-size: 20px;
+    }
+
+    .coin-image-settings{
+        width: 30px;
+    }
+
+    .coin-p.price{
+        font-size: 20px;
+    }
+
+    .coin-c.change{
+        font-size: 10px;
+    }
+
+    .chart-footer{
+        font-size: 10px;
+        gap: 5px;
+    }
+
+    .chart-button{
+        font-size: 9px;
+    }
+
+    .information-header{
+        font-size: 20px;
+    }
+
+    .description{
+        font-size: 17px;
+    }
+}
+
+@media(max-width: 430px){
+    #price{    
+        min-width: 350px;
+        max-width: 350px;
+    }
+
+    .information{
+        min-width: 350px;
+        max-width: 350px;
+    }
+
+    .chart-footer {
+        font-size: 9px;
+        gap: 3px;
+    }
+    
+    .chart-button{
+        font-size: 7px;
+    }
+}
+
+
+@media(min-width: 431px){
+    .chart-body{
+        /* min-height: 582px;
+        min-width: 1165px; */
+        /* height: auto;
+        width: 100%; */
+        min-height: 200px;
+        min-width: 400px;
+       
+    }
+}
+
+@media(min-width: 551px){
+    .chart-body{
+        /* min-height: 582px;
+        min-width: 1165px; */
+        /* height: auto;
+        width: 100%; */
+        min-height: 250px;
+        min-width: 500px;
+       
+    }
+}
+
+@media(min-width: 675px){
+    .chart-body{
+        /* min-height: 582px;
+        min-width: 1165px; */
+        /* height: auto;
+        width: 100%; */
+        min-height: 325px;
+        min-width: 650px;
+       
+    }
+}
+
+@media(min-width: 751px){
+    .chart-body{
+        /* min-height: 582px;
+        min-width: 1165px; */
+        /* height: auto;
+        width: 100%; */
+        min-height: 350px;
+        min-width: 700px;
+       
+    }
+}
+
+@media(min-width: 1266px){
+    .chart-body{
+        min-height: 582px;
+        min-width: 1165px;
+        /* height: auto;
+        width: 100%; */
+     
+    }
 }
