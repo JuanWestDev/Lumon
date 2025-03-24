@@ -16,11 +16,11 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", async (req, res) => {
-  console.log("trying.... ");
+  // console.log("trying.... ");
   try {
     const response = await axios.get(API_URL + "coins?limit=20", config);
     const result = response.data.data;
-    console.log("loading... ");
+    // console.log("loading... ");
       try{
         const trendingResponse = await axios.get(API_URL + "coins?limit=3&orderBy=24hVolume&orderDirection=desc&tiers[]=1", config);
         const trendingResult = trendingResponse.data.data;
@@ -32,7 +32,7 @@ app.get("/", async (req, res) => {
               const topLosersResult = topLosersResponse.data.data;
 
               // console.log(result);
-
+              console.log("Lumon has been activated... ");
               res.render("index.ejs", {
                 crypto: result.coins,
                 // coinUrl: result.coins.coinrankingUrl,

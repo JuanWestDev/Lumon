@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
     <link rel="stylesheet" href="/styles/head-and-foot.css">
+    <link rel="stylesheet" href="/styles/responsive.css">
     <link rel="stylesheet" href="/styles/home.css">
     <title>Lumon</title>
 </head>
@@ -30,112 +31,129 @@
             <div id="crypto-market-overview-box">
               
 
-                <div class = "market-overview-card">
+                <div class = "market-overview-card carousel-container">
                     <div class="market-overview-header title-sections">
                         <h2>Markets Overview</h2>
                     </div>
 
-                <div class="market-overview">
-                    
-                    <div class="trending card">
-                        <table class="all-crypto-table">
-                            <tbody class="all-crypto-table-body">
+                    <div class="market-overview carousel">
+                        
+                        <!-- <div class="carousel-slide">
 
-                                <tr class="row-headers">
-                                    <td class="table-data tab">
-                                        <span class="header-span">
-                                            <div class="header-div">
-                                                <div class="header-div-text">Trending</div>
-                                                    <div class="header-div-image">
-                                                        <img class="market-images" src="/images/flame-icon.png">
-                                                    </div>
-                                            </div>
-                                        </span>
-                                    </td>
-                                        <!-- Trending<span><img class="market-images" src="/images/flame-icon.png"></span></td> -->
-                                </tr>
+                     
+                            
+                        </div> -->
 
-                                    <% trending.forEach(function(coin) { %>
-                                        <tr class="row-data hidden" onClick="window.location.href='http://localhost:3000/coin/<%=coin.uuid%>'">
-                                            <td class="table-data name"> <span class="image-block"><img class="crypto-image" src="<%=coin.iconUrl %>"></span> <span class="crypto-name"><%= coin.name %></span> <span class="crypto-symbol"><%= coin.symbol %></span></td>
-                                            <td class="table-data price"><%= coin.price %></td>
-                                            <td class="table-data change"><%= coin.change %></td>
-                                        </tr>
-                                    <% }); %>
-                                
-                              
-                            </tbody>
-                        </table>
-                    </div>
-               
-                    <div class="top-gainers card">
-                        <table>
-                            <table class="all-crypto-table">
-                                <tbody class="all-crypto-table-body">
-    
+                        <div class="trending card">
+                            <table class="all-crypto-table trend mark-t">
+                                <tbody class="all-crypto-table-body mark-b ">
+
                                     <tr class="row-headers">
                                         <td class="table-data tab">
                                             <span class="header-span">
                                                 <div class="header-div">
-                                                    <div class="header-div-text">Top Gainers</div>
+                                                    <div class="header-div-text">Trending</div>
                                                         <div class="header-div-image">
-                                                            <img class="market-images" src="/images/up-arrow.png">
+                                                            <img class="market-images" src="/images/flame-icon.png">
                                                         </div>
                                                 </div>
                                             </span>
                                         </td>
                                             <!-- Trending<span><img class="market-images" src="/images/flame-icon.png"></span></td> -->
                                     </tr>
-    
-                                        <% topGainer.forEach(function(coin) { %>
+
+                                        <% trending.forEach(function(coin) { %>
                                             <tr class="row-data hidden" onClick="window.location.href='http://localhost:3000/coin/<%=coin.uuid%>'">
-                                                <td class="table-data name"> <span class="image-block"><img class="crypto-image" src="<%=coin.iconUrl %>"></span> <span class="crypto-name"><%= coin.name %></span> <span class="crypto-symbol"><%= coin.symbol %></span></td>
+                                                <td class="table-data name"> <span class="image-block"><img class="crypto-image" src="<%=coin.iconUrl %>"></span> <span class="crypto-name"><%=  coin.symbol %></span> <span class="crypto-symbol"><%= coin.symbol %></span></td>
                                                 <td class="table-data price"><%= coin.price %></td>
-                                                <td class="table-data change"><%= coin.change %></td>
+                                                <td class="table-data change p-column"><%= coin.change %></td>
                                             </tr>
                                         <% }); %>
                                     
-                                  
+                                
                                 </tbody>
                             </table>
-                        </table>
-                    </div>
+                        </div>
                     
-                    <div class="top-losers card">
-                        <table>
-                            <table class="all-crypto-table">
-                                <tbody class="all-crypto-table-body">
-    
-                                    <tr class="row-headers">
-                                        <td class="table-data tab">
-                                            <span class="header-span">
-                                                <div class="header-div">
-                                                    <div class="header-div-text">Top Losers</div>
-                                                        <div class="header-div-image">
-                                                            <img class="market-images" src="/images/down-arrow.png">
-                                                        </div>
-                                                </div>
-                                            </span>
-                                        </td>
-                                            <!-- Trending<span><img class="market-images" src="/images/flame-icon.png"></span></td> -->
-                                    </tr>
-    
-                                        <% topLoser.forEach(function(coin) { %>
-                                            <tr class="row-data hidden" onClick="window.location.href='http://localhost:3000/coin/<%=coin.uuid%>'">
-                                                <td class="table-data name"> <span class="image-block"><img class="crypto-image" src="<%=coin.iconUrl %>"></span> <span class="crypto-name"><%= coin.name %></span> <span class="crypto-symbol"><%= coin.symbol %></span></td>
-                                                <td class="table-data price"><%= coin.price %></td>
-                                                <td class="table-data change"><%= coin.change %></td>
-                                            </tr>
-                                        <% }); %>
+                        <!-- <div class = "carousel-slide">
+                          
+                        </div> -->
+
+                        <div class="top-gainers card">
+                            <table>
+                                <table class="all-crypto-table gainers mark-t">
+                                    <tbody class="all-crypto-table-body mark-b ">
+        
+                                        <tr class="row-headers">
+                                            <td class="table-data tab">
+                                                <span class="header-span">
+                                                    <div class="header-div">
+                                                        <div class="header-div-text">Top Gainers</div>
+                                                            <div class="header-div-image">
+                                                                <img class="market-images" src="/images/up-arrow.png">
+                                                            </div>
+                                                    </div>
+                                                </span>
+                                            </td>
+                                                <!-- Trending<span><img class="market-images" src="/images/flame-icon.png"></span></td> -->
+                                        </tr>
+        
+                                            <% topGainer.forEach(function(coin) { %>
+                                                <tr class="row-data hidden" onClick="window.location.href='http://localhost:3000/coin/<%=coin.uuid%>'">
+                                                    <td class="table-data name"> <span class="image-block"><img class="crypto-image" src="<%=coin.iconUrl %>"></span> <span class="crypto-name"><%=  coin.symbol %></span> <span class="crypto-symbol"><%= coin.symbol %></span></td>
+                                                    <td class="table-data price"><%= coin.price %></td>
+                                                    <td class="table-data change p-column"><%= coin.change %></td>
+                                                </tr>
+                                            <% }); %>
+                                        
                                     
-                                  
-                                </tbody>
-                        </table>
+                                    </tbody>
+                                </table>
+                            </table>
+                        </div>
+
+                        <!-- <div class="carousel-slide">
+                            
+                        </div> -->
+
+                        <div class="top-losers card">
+                            <table>
+                                <table class="all-crypto-table losers mark-t ">
+                                    <tbody class="all-crypto-table-body mark-b">
+        
+                                        <tr class="row-headers">
+                                            <td class="table-data tab">
+                                                <span class="header-span">
+                                                    <div class="header-div">
+                                                        <div class="header-div-text">Top Losers</div>
+                                                            <div class="header-div-image">
+                                                                <img class="market-images" src="/images/down-arrow.png">
+                                                            </div>
+                                                    </div>
+                                                </span>
+                                            </td>
+                                                <!-- Trending<span><img class="market-images" src="/images/flame-icon.png"></span></td> -->
+                                        </tr>
+        
+                                            <% topLoser.forEach(function(coin) { %>
+                                                <tr class="row-data hidden" onClick="window.location.href='http://localhost:3000/coin/<%=coin.uuid%>'">
+                                                    <td class="table-data name"> <span class="image-block"><img class="crypto-image" src="<%=coin.iconUrl %>"></span> <span class="crypto-name"><%= coin.symbol %></span> <span class="crypto-symbol"><%= coin.symbol %></span></td>
+                                                    <td class="table-data price"><%= coin.price %></td>
+                                                    <td class="table-data change p-column"><%= coin.change %></td>
+                                                </tr>
+                                            <% }); %>
+                                        
+                                    
+                                    </tbody>
+                            </table>
+                        </div>
+
+
                     </div>
-
-                </div>
-
-                    
+                    <div class="carousel-buttons"> 
+                        <button class="prev-btn" hidden>Previous</button>
+                        <button class="next-btn" hidden>Next</button>
+                    </div>
                 </div>
               
             </div>
@@ -190,10 +208,10 @@
                                 <% crypto.forEach(function(coin) { %>
                                     <tr class="row-data hidden" onClick="window.location.href='http://localhost:3000/coin/<%=coin.uuid%>'">
                                         <td class="table-data rank" ><%=coin.rank %></td>
-                                        <td class="table-data crypto-name"><span class="image-block"><img class="crypto-image" src="<%=coin.iconUrl %>"></span> <span class="crypto-name"><%= coin.name %></span> <span class="crypto-symbol"><%= coin.symbol %></span></td>
+                                        <td class="table-data crypto-name"><span class="image-block"><img class="crypto-image" src="<%=coin.iconUrl %>"></span> <span class="crypto-name"><%=  coin.symbol %></span> <span class="crypto-symbol"><%= coin.symbol %></span></td>
                                         <td class="table-data price"><%= coin.price %></td>
                                         <td class="table-data mc"><%= coin.marketCap %></td>
-                                        <td class="table-data change"><%= coin.change %></td>
+                                        <td class="table-data change" id="lumon-change"><%= coin.change %></td>
                                     </tr>
                                 <% }); %>
                                 
@@ -218,6 +236,7 @@
 
     </div>
   
+    <script src="/scripts/carouselScript.js"></script>
     <script src="/scripts/arrowSettings.js"></script>
     <script src="/scripts/numberFormats.js"></script>
     <script src="/scripts/pageScript.js"></script>

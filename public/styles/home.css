@@ -15,7 +15,7 @@ body {
 h1{
     color: whitesmoke;
     font-size: 25px;
-    margin-left: 10px;
+    /* margin-left: 10px; */
     cursor: pointer;
     background-image: linear-gradient(to right, #18A5A7, #BFFFC7);
     color: transparent;
@@ -95,7 +95,7 @@ h1:hover{
     display: flex;
     color: whitesmoke;
     align-self: flex-start;
-    font-size: 25px;
+    font-size: 20px;
     /* margin-left: 280px; */
 }
 
@@ -105,22 +105,118 @@ h1:hover{
 
 }
 
-.market-overview-card{
+.carousel-container{
+    position: relative;   
+    overflow: hidden;
+    margin: 0 auto;
+
     margin-top: 140px;
     min-width: 1165px;
     max-width: 1165px;
 }
 
-.market-overview{
+.carousel{
     display: flex;
-    /* flex-direction: column; */
     justify-content: space-between;
-    /* align-items: center; */
-    /* background-color: rgb(160, 255, 151); */
-    gap:25px;
-    /* height: 500px; */
+   
     /* width: 100%; */
+    transition: transform 0.5s ease-in-out;
+
 }
+
+.carousel-buttons{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 12px;
+
+}
+
+.card{
+    display: flex;
+    /* justify-content: center; */
+    box-sizing: border-box;
+    padding: 10px;
+    /* min-width: 300px;
+    max-width: 300px; */
+  
+   
+    
+}
+
+.mark-t{
+    /* min-width: 300px;
+    max-width: 300px; */
+}
+
+.mark-b{
+    min-width: 350px;
+    max-width: 350px;
+}
+
+
+/* .carousel-container{
+
+    position: relative;   
+    overflow: hidden;
+    margin: 0 auto;
+
+    margin-top: 140px;
+    min-width: 1165px;
+    max-width: 1165px;
+}
+
+.carousel{
+    display: flex;
+ 
+   
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+
+}
+
+.carousel-slide{
+ 
+   
+}
+
+.card{
+    display: flex;
+    justify-self: center;
+    box-sizing: border-box;
+    padding: 10px;
+    flex: 0 0 100%;
+  
+    min-width: 100%;
+    
+}
+
+
+
+.mark-t{
+    justify-self: center;
+    min-width: 100%;
+}
+
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #d4a017;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.prev-btn {
+    left: 0;
+}
+
+.next-btn {
+    right: 0;
+} */
+
 
 .market-images{
     height: 20px;
@@ -143,7 +239,7 @@ h1:hover{
 }
 
 .header-div-text{
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .header-div-image{
@@ -156,16 +252,6 @@ h1:hover{
 
 }
 
-
-.card{
-    display: flex;
-    /* border-width: 5px;
-    border-style: solid;
-    border-image: linear-gradient(to right, #18A5A7, #BFFFC7) 1; */
-    /* background-color: yellow; */
-    /* height: 250px; */
-    /* width: 250px; */
-}
 
 #crypto-box{
     display: flex;
@@ -212,7 +298,7 @@ h1:hover{
 }
 
 .row-headers{
-
+    font-size: 14px;
 }
 
 .tab{
@@ -255,11 +341,13 @@ h1:hover{
 
 .all-crypto-table{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-width: 2px;
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* border-width: 2px;
     border-style: solid;
-    border-image: linear-gradient(to right, #18A5A7, #BFFFC7) 1;
+    border-image: linear-gradient(to right, #18A5A7, #BFFFC7) 1; */
+    border: #8efdc6 solid 1px;
+    border-radius: 10px;
     width: fit-content;
     /* background-color: rgb(255, 255, 255); */
 }
@@ -275,9 +363,11 @@ h1:hover{
     /* display: flex;
     flex-direction: column;
     justify-content: center; */
-    border-width: 2px;
+    /* border-width: 2px;
     border-style: solid;
-    border-image: linear-gradient(to right, #18A5A7, #BFFFC7) 1;
+    border-image: linear-gradient(to right, #18A5A7, #BFFFC7) 1; */
+    border: #8efdc6 solid 1px;
+    border-radius: 10px;
     min-width: 1165px;
     max-width: 1165px;
 }
@@ -371,7 +461,7 @@ h1:hover{
 
 
 .all-crypto-table-body{
-    font-size: 15px;
+    font-size: 10px;
     color: whitesmoke;
     /* background-color: rgb(255, 255, 255); */
     
@@ -410,8 +500,27 @@ tr:hover{
 
 .table-data.name{
     display:flex;
+   
     align-items: center;
     gap: 10px;
+
+    min-width: 180px;
+    max-width: 180px;
+    /* margin-right: 300px; */
+}
+
+.table-data.price{
+   
+    min-width: 50px;
+    max-width: 50px;
+    /* margin-right: 300px; */
+}
+
+.table-data.p-column{
+  
+    min-width: 50px;
+    max-width: 50px;
+    /* flex-grow: 1; */
 }
 
 .table-data.crypto-name{
@@ -456,13 +565,14 @@ tr:hover{
 
 .pagination{
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     align-self: flex-end;
     /* background-color: yellowgreen; */
-    width: 200px;
-    height: 75px;
-    gap: 10px;
+    /* width: 200px; */
+    /* height: 75px; */
+    /* gap: 10px; */
+    z-index: 1;
 }
 
 .pagination a{
@@ -473,18 +583,42 @@ tr:hover{
     text-decoration: none;
 
 
-    border-width: 2px;
+    /* border-width: 2px;
     border-style: solid;
-    border-image: linear-gradient(to right, #18A5A7, #BFFFC7) 1;
+    border-image: linear-gradient(to right, #18A5A7, #BFFFC7) 1; */
+
+    /* border: #8efdc6 solid 1px; */
+    /* border-radius: 5px;
 
     padding: 10px;
-    width: 65px;
+    width: 65px; */
+
+    min-width: 65px;
+    max-width: 65px;
 
     cursor: pointer;
+
+    margin: 3px;
+    margin-top: 10px;
+
+    z-index: -1;
     
 }
 
-.pagination a:hover{
+
+
+.pagination-text{
+    display: flex;
+align-items: center;
+    justify-content: center;
+    font-size: 10px;
+     width: 65px;
+    border: #8efdc6 solid 1px;
+         border-radius: 10px;
+         padding: 5px;
+}
+
+.pagination-text:hover{
     /* border-width: 2px;
     border-style: solid;
     border-color: rgb(255, 0, 0); */
@@ -506,6 +640,471 @@ tr:hover{
     /* background-color: aliceblue; */
 }
 
-.pagination-text{
-    font-size: 15px;
+.row-data.hidden{
+    min-width: 200px;
+}
+
+@media (max-width: 1265px) {
+
+    .carousel-container{
+
+        position: relative;   
+        overflow: hidden;
+        margin: 0 auto;
+    
+        margin-top: 140px;
+        min-width: 1165px;
+        max-width: 1165px;
+    }
+    
+    .carousel{
+        display: flex;
+     
+       
+        width: 100%;
+        transition: transform 0.5s ease-in-out;
+    
+    }
+    
+    .carousel-slide{
+     
+       
+    }
+    
+    .card{
+        display: flex;
+        justify-self: center;
+        box-sizing: border-box;
+        padding: 10px;
+        flex: 0 0 100%;
+      
+        min-width: 100%;
+        
+    }
+    
+    
+    
+    .mark-t{
+        justify-self: center;
+        min-width: 100%;
+    }
+    
+    .mark-b{
+    
+    max-width: 1000px;
+    }
+
+    .prev-btn, .next-btn {
+        display: flex;
+        /* position: absolute; */
+        align-items: center;
+        justify-content: center;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: transparent;
+        font-size: 10px;
+        color: #fff;
+        border: #8efdc6 solid 1px;
+        border-radius: 10px;
+        padding: 5px;
+        cursor: pointer;
+        /* border-radius: 5px; */
+
+        width: 65px;
+        margin: 3px;
+        margin-top: 10px;
+    }
+    
+    .prev-btn {
+        left: 0;
+    }
+    
+    .next-btn {
+        right: 0;
+    }
+
+
+    .table-data.name{
+        display:flex;
+        align-items: center;
+        gap: 10px;
+        margin-right: 335px;
+    }
+    
+    .table-data.p-column{
+        /* padding-left: 80px; */
+    }
+
+    .title-sections{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .market-overview {
+        width: 100%;
+    }
+
+  
+
+    
+    .market-overview .card{
+        /* display: none; */
+     }
+
+    .top-losers{
+        /* display: none; */
+    }
+
+
+    
+    .market-overview-card{
+        min-width: 700px;
+        max-width: 700px;
+        
+    }
+
+    .market-overview{
+        display: flex;
+        /* justify-content: center; */
+        width: 100%;
+     }
+
+     div.header-div-text{
+        font-size: 15px;
+     }
+
+     .all-crypto-table.trend{
+        /* min-width: 700px;
+        max-width: 700px; */
+     }
+
+
+     .market-overview .card{
+        /* display: none; */
+     }
+
+     .trend.gainers.losers {
+        min-width: 400px;
+        max-width: 400px;
+    }
+
+    .table-data.name {
+        /* margin-right: 125px; */
+    }
+
+    .all-crypto-table-body{
+        /* flex-direction:row;
+        width: 100%; */
+        /* font-size: 10px; */
+     }
+
+     .row-headers{
+        /* font-size: 12px; */
+     }
+
+     .crypto-image{
+        width: 20px;
+     }
+
+     .table-data.crypto-name{
+        min-width: 150px;
+        max-width: 150px;
+     }
+
+     .table-data.mc{
+        min-width: 82px;
+     }
+
+     .crypto-coins{
+        min-width: 700px;
+        max-width: 700px;
+     }
+
+     .lumon-watch{
+        min-width: 700px;
+        max-width: 700px;
+        align-self: center;
+     }
+
+     .pagination{
+        /* width: fit-content; */
+        /* height: 45px;
+        gap: 7px; */
+        /* position: relative;
+        right: 25px; */
+     }
+
+     .pagination a{
+        /* min-width: 35px;
+        max-width: 35px; */
+        /* margin: 3px;
+        margin-top: 10px; */
+     }
+
+     .pagination-text{
+        font-size: 10px;
+     }
+}
+
+
+@media (max-width: 750px) {
+
+ 
+
+    .title-sections{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .market-overview {
+        width: 100%;
+    }
+
+    /* .market-overview .card{
+       display: none;
+    } */
+
+    .market-overview-card{
+        /* min-width: 500px;
+        max-width: 500px; */
+        min-width: 650px;
+        max-width: 650px;
+    }
+
+    .market-overview .trending{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+     }
+
+    .all-crypto-table-body{
+        /* flex-direction:row;
+        width: 100%; */
+        font-size: 10px;
+     }
+
+     .row-headers{
+        font-size: 12px;
+     }
+
+     .crypto-image{
+        width: 20px;
+     }
+
+     .table-data.crypto-name{
+        min-width: 150px;
+        max-width: 150px;
+     }
+
+     .table-data.mc{
+        min-width: 82px;
+     }
+
+     .crypto-coins{
+        min-width: 650px;
+        max-width: 650px;
+     }
+
+     .lumon-watch{
+        min-width: 650px;
+        max-width: 650px;
+        /* align-self: center; */
+     }
+
+     .pagination{
+        /* width: fit-content;
+        height: 45px;
+        gap: 7px;
+        position: relative;
+        right: 25px; */
+     }
+
+     .pagination a{
+        /* min-width: 35px;
+        max-width: 35px;
+        padding: 5px; */
+     }
+
+     .pagination-text{
+        font-size: 10px;
+     }
+}
+
+@media (max-width: 700px){
+    .market-overview-card{
+        min-width: 500px;
+        max-width: 500px;
+    }
+
+    .table-data.name{
+        display:flex;
+        align-items: center;
+        gap: 10px;
+        margin-right: 100px;
+    }
+
+    .crypto-coins{
+        min-width: 500px;
+        max-width: 500px;
+    }
+
+    .lumon-watch{
+        min-width: 500px;
+        max-width: 500px;
+    }
+}
+
+
+@media (max-width: 550px){
+
+
+    .market-overview-card{
+        min-width: 400px;
+        max-width: 400px;
+    }
+
+    .crypto-coins{
+        min-width: 400px;
+        max-width: 400px;
+    }
+
+
+    .lumon-watch{
+        min-width: 400px;
+        max-width: 400px;
+    }
+
+    #lumon-change{
+        /* display: none; */
+    }
+
+    .table-data.mc{
+        display: none;
+    }
+
+    .tab.mcap{
+        display: none;
+    }
+
+    .table-data.change{
+        /* display: none; */
+    }
+
+    .tab.percentage{
+        /* display: none; */
+    }
+
+
+    .trend.gainers.losers {
+        min-width: 400px;
+        max-width: 400px;
+    }
+
+    .table-data.name {
+        margin-right: 25px;
+    }
+
+
+    .rank{
+        width: 10px;
+    }
+
+    .names{
+        /* width: 10px; */
+    }
+
+    .coinPrice{
+        width: 10px;
+    }
+
+    .pagination{
+        right: 5px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+    
+    .market-overview-card{
+        min-width: 400px;
+        max-width: 400px;
+    }
+
+    .crypto-coins{
+        min-width: 400px;
+        max-width: 400px;
+    }
+
+    .lumon-watch{
+        min-width: 400px;
+        max-width: 400px;
+    }
+
+    .tab.mcap{
+        /* display: none; */
+    }
+
+}
+
+@media (max-width:430px) {
+    .market-overview-card{
+        min-width: 350px;
+        max-width: 350px;
+    }
+
+    .crypto-coins{
+        min-width: 350px;
+        max-width: 350px;
+    }
+
+    .lumon-watch{
+        min-width: 350px;
+        max-width: 350px;
+    }
+
+    .table-data.name {
+        min-width: 100px;
+        max-width: 100px;
+        margin-right: 70px;
+    }
+  
+    .all-crypto-table{
+        justify-content:unset;
+    }
+}
+
+@media (max-width:350px) {
+    .market-overview-card{
+        min-width: 300px;
+        max-width: 300px;
+    }
+
+    .crypto-coins{
+        min-width: 300px;
+        max-width: 300px;
+    }
+
+    .lumon-watch{
+        min-width: 300px;
+        max-width: 300px;
+    }
+
+    .title-sections{
+        font-size: 17px;
+    }
+
+    .all-crypto-table.trend{
+        min-width: 300px;
+        max-width: 300px;
+
+        gap: 10px;
+    }
+
+    .table-data.name{
+        gap:5px;
+        /* margin-right: 100px; */
+    }
 }

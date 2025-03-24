@@ -1,32 +1,45 @@
 <div id="menu-bar">
     <div id="menu-items">
-        <div class="menu-items-left">
+        <div id="menu-items-container">
+            <div class="menu-items-left">
 
-            <h1 class ="glow-text" onClick="window.location.href='http://localhost:3000/'; return false">Lumon</h1>
+                <h1 class ="glow-text" onClick="window.location.href='http://localhost:3000/'; return false">Lumon</h1>
 
-            <div id="items">
-                <button class="item-button fill-effect">Buy Crypto</button>
-                <button class="item-button fill-effect">Markets</button>
-                <button class="item-button fill-effect">Trade</button>
+                <div id="items-main-box" class="items-customize">
+                    <button class="item-button fill-effect">Buy Crypto</button>
+                    <button class="item-button fill-effect">Markets</button>
+                    <button class="item-button fill-effect">Trade</button>
+                </div>
+
+                <div id="items" class="items-customize" hidden>
+                    <button class="item-button fill-effect">Buy Crypto</button>
+                    <button class="item-button fill-effect">Markes</button>
+                    <button class="item-button fill-effect">Trade</button>
+                </div>
+
+                <div class="search-container">
+                    <input type="text" id="coinSearch" placeholder="Search" onkeyup="suggestCoins(event)">
+                    <div id="suggestions" style="display:none"></div>
+                </div>
+
             </div>
 
-            <div class="search-container">
-                <input type="text" id="coinSearch" placeholder="Search" onkeyup="suggestCoins(event)">
-                <div id="suggestions" style="display:none"></div>
-            </div>
-
-        </div>
-
-        <div class="menu-items-right">
-            <div class="login-sign-up-buttons">
-                <div class="login fill-effect">Login</div>
-                <div class="sign-up glow-text">Sign Up</div>
+            <div class="menu-items-right">
+                <div class="login-sign-up-buttons">
+                    <div class="login fill-effect">Login</div>
+                    <div class="sign-up glow-text">Sign Up</div>
+                    <div class="more" id="more" hidden>
+                        <img class="more-image" src="../images/list.svg"></img>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 <script>
+    const menu = document.querySelector(".more");
+    const moreButton = document.querySelector(".more-image");
     let debounceTimer;
 
     function suggestCoins(event) {
@@ -111,6 +124,75 @@
             suggestionsContainer.style = "display:none";
         }
     }
+
+    // const menuContainer = document.createElement("div");
+    // menuContainer.className = "menu-container";
+
+    // const exitMenuImage = document.createElement("img")
+    // exitMenuImage.className = "exit-menu-image";
+    // exitMenuImage.src = "../images/x-circle.svg";
+
+    // const exitMenuButton = document.createElement("div");
+    // exitMenuButton.className = "exit-menu-button";
+    // exitMenuButton.appendChild(exitMenuImage);
+
+    // const topMenuBox = document.createElement("div");
+    // topMenuBox.className = "top-menu-box";
+    // topMenuBox.appendChild(exitMenuButton);
+
+    const menuContainer = document.createElement("div");
+    menuContainer.className = "menu-container";
+  
+
+    const exitMenuImage = document.createElement("img")
+    exitMenuImage.className = "exit-menu-image";
+    exitMenuImage.src = "../images/x-circle.svg";
+
+    const exitMenuButton = document.createElement("div");
+    exitMenuButton.className = "exit-menu-button";
+    exitMenuButton.appendChild(exitMenuImage);
+
+    const topMenuBox = document.createElement("div");
+    topMenuBox.className = "top-menu-box";
+    topMenuBox.appendChild(exitMenuButton);
+
+
+    const loginButton = document.createElement("div");
+    loginButton.className = "login";
+    loginButton.id = "login";
+    loginButton.textContent = "Login";
+    loginButton.style.display =  "flex";
+
+
+    const signUpButton = document.createElement("div");
+    signUpButton.className = "sign-up";
+    signUpButton.id = "sign-up";
+    signUpButton.textContent = "Sign Up";
+    signUpButton.style.display =  "flex";
+       
+
+    const menuLoginAndSignUp = document.createElement("div");
+    menuLoginAndSignUp.className = "menu-login-sign";
+    menuLoginAndSignUp.appendChild(loginButton);
+    menuLoginAndSignUp.appendChild(signUpButton);
+
+    const items = document.getElementById("items");
+    items.style.display = "flex";
+
+    menuContainer.appendChild(topMenuBox);
+    menuContainer.appendChild(menuLoginAndSignUp);
+    menuContainer.appendChild(items);
+    menu.appendChild(menuContainer);
+
+
+    moreButton.addEventListener('click', function(){
+        menuContainer.style.display = "block"; 
+     
+    });
+
+    exitMenuButton.addEventListener('click', function(){
+            menuContainer.style.display = "none";
+    });
 
     document.addEventListener('click', clearSuggestionsOnOutsideClick);
 </script>
