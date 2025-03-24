@@ -214,9 +214,6 @@ a {
 }
 
 a:visited {
-<<<<<<< HEAD
-    color: inherit; 
-=======
     color: inherit; /* Ensures the link color doesn't change after being visited */
 }
 
@@ -497,5 +494,4 @@ a:visited {
         width: 100%; */
      
     }
->>>>>>> make-coin-page-responsive
 }
