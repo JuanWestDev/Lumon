@@ -38,16 +38,21 @@ Lumon is a full-stack web application inspired by the Apple TV series *Severance
    git clone https://github.com/JuanWestDev/Lumon.git
 
 2. Navigate to the project directory:
-    cd Lumon
+  ```bash
+   cd Lumon
+   ```
 
 3. Install dependencies:
+  ```bash
   npm install
+   ```
 
 4. Set up the CoinRanking API key:
   Sign up at CoinRanking to get an API key.
   Navigate to index.js file and paste your API Key in to the const api_key.
 
 5. Start the server:
+  ```bash
   nodemon index.js or node index.js
 
 6. Open http://localhost:3000 in your browser
