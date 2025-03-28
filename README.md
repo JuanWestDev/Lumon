@@ -36,7 +36,7 @@ Lumon is a full-stack web application inspired by the Apple TV series *Severance
 1. Clone the repository:
    ```bash
    git clone https://github.com/JuanWestDev/Lumon.git
-
+   ```
 2. Navigate to the project directory:
   ```bash
    cd Lumon
@@ -53,7 +53,11 @@ Lumon is a full-stack web application inspired by the Apple TV series *Severance
 
 5. Start the server:
   ```bash
-  nodemon index.js or node index.js
+  nodemon index.js
+  ```  
+  ```bash
+   node index.js
+  ```
 
 6. Open http://localhost:3000 in your browser
 
