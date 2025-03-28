@@ -48,8 +48,8 @@ Lumon is a full-stack web application featuring a cryptocurrency dashboard power
    ```
 
 4. Set up the CoinRanking API key:
-  - Sign up at CoinRanking to get an API key.
-  - Navigate to index.js file and paste your API Key in to the const api_key.
+     - Sign up at CoinRanking to get an API key.
+     - Navigate to index.js file and paste your API Key in to the const api_key.
 
 5. Start the server:
    ```bash
