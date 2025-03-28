@@ -1,6 +1,6 @@
 ## Overview
 
-Lumon is a full-stack web application inspired by the Apple TV series *Severance*, which explores the concept of work-life separation. This project recreates the fictional Lumon Industries website with a corporate aesthetic, featuring a mock employee portal and a cryptocurrency dashboard powered by the [CoinRanking API](https://coinranking.com/api). The dashboard displays real-time cryptocurrency data, blending the thematic elements of *Severance* with practical API integration. This project showcases my skills in full-stack development, API integration, and responsive design.
+Lumon is a full-stack web application featuring a cryptocurrency dashboard powered by the CoinRanking API. It displays real-time cryptocurrency data, showcasing my skills in full-stack development, API integration, and responsive design.
 
 ## Tech Stack
 
@@ -48,8 +48,8 @@ Lumon is a full-stack web application inspired by the Apple TV series *Severance
    ```
 
 4. Set up the CoinRanking API key:
-  Sign up at CoinRanking to get an API key.
-  Navigate to index.js file and paste your API Key in to the const api_key.
+  -Sign up at CoinRanking to get an API key.
+  -Navigate to index.js file and paste your API Key in to the const api_key.
 
 5. Start the server:
    ```bash
